@@ -1,1 +1,1 @@
-:mars::robot_face::dog:
+:mars: :robot_face: :dog:
