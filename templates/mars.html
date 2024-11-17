@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotic Dog on Mars</title>
+    <!-- A-Frame Library -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script>
+        // Function to start face tracking by sending a request to the server
+        function startFaceTracking() {
+            fetch('/start-face-tracking', { method: 'POST' })
+                .then(response => {
+                    if (response.ok) {
+                        console.log("Face tracking started!");
+                    } else {
+                        console.error("Error starting face tracking.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                });
+        }
+    </script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+
+    <!-- A-Frame Scene -->
+    <a-scene>
+        <!-- Mars 360-degree Skybox -->
+        <a-sky src="https://mars.nasa.gov/system/news_items/main_images/9389_PIA26347-MarsLandscape-16.jpg" rotation="0 -130 0"></a-sky>
+
+        <!-- Camera with look-controls (mouse/touch drag to move) -->
+        <a-entity id="camera" camera look-controls="pointerLockEnabled: false" position="0 1.6 0">
+        </a-entity>
+
+        <!-- Ambient Light for basic lighting -->
+        <a-light type="ambient" intensity="0.5"></a-light>
+
+        <!-- Directional Light mimicking the Sun -->
+        <a-light type="directional" intensity="1" position="5 10 -5" target="#camera"></a-light>
+
+        <!-- Mars Terrain (using a basic reddish plane for simplicity) -->
+        <a-plane color="#B64F47" height="100" width="100" rotation="-90 0 0" position="0 0 0">
+            <!-- Optional: Add some texture -->
+            <a-image src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Martian_surface_%28Schiaparelli%29.jpg/1280px-Martian_surface_%28Schiaparelli%29.jpg" width="100" height="100" rotation="-90 0 0"></a-image>
+        </a-plane>
+
+        <!-- Robotic Dog Model (replace with your own model) -->
+        <a-entity gltf-model="url(Cute_Demon.glb)" scale="1 1 1" position="0 0 -5" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000"></a-entity>
+
+        <!-- Optional: Sound for atmosphere (wind or robot sounds) -->
+        <a-sound src="url(mars.mp3)" autoplay="true" loop="true" position="0 1.6 0"></a-sound>
+    </a-scene>
+
+    <!-- Button to trigger face tracking -->
+    <div style="position: absolute; top: 20px; left: 20px; z-index: 10;">
+        <button onclick="startFaceTracking()">Start Face Tracking</button>
+    </div>
+
+</body>
+</html>
