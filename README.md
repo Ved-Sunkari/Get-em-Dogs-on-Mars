@@ -5,7 +5,7 @@ Welcome to the Robotic Dog Simulation project, where we simulate a robotic dog l
 ### View our models on the test data in the outputs folder!
 
 ### 🔗 Live Website
-#The Flask app is available here: <>
+#The FastAPI app is available here: <>
 
 Note: The website may not always be up and running. In that case, use the app.py script for local testing.
 
@@ -75,7 +75,7 @@ The script will run the environment using the trained AI reinforcement model.
 ### 🛠️ Development
 Want to improve the app? Here’s how you can set up the project for development:
 
-Run the Flask app locally:
+Run the FastAPI app locally:
 
 bash
 Copy code
