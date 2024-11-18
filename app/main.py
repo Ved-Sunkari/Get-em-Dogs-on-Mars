@@ -11,7 +11,7 @@ import numpy as np
 # Initialize FastAPI app
 app = FastAPI()
 
-# Initialize Jinja2 templates
+# Initialize Jinja2 templates for rendering HTML
 templates = Jinja2Templates(directory="templates")
 
 # Optionally, add static file handling (for CSS, JS, images)
@@ -25,16 +25,24 @@ app.add_middleware(TrustedHostMiddleware, allowed_hosts=["*"])
 async def read_home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "message": "Hello, FastAPI!"})
 
+# Route to render the "Mars" page (for testing purposes)
 @app.get("/mars", response_class=HTMLResponse)
 async def get_mars_page(request: Request):
     return templates.TemplateResponse("mars.html", {"request": request})
 
+# POST route to start the face tracking in the background
 @app.post("/start-face-tracking")
 async def start_face_tracking(background_tasks: BackgroundTasks):
-        # Initialize face detector (Dlib)
+    # Add the face tracking task to run in the background
+    background_tasks.add_task(run_face_tracking)
+    return {"message": "Face tracking started in the background."}
+
+# Function to handle the face tracking process (runs in background)
+def run_face_tracking():
+    # Initialize face detector (Dlib)
     detector = dlib.get_frontal_face_detector()
 
-    # Initialize webcam
+    # Initialize webcam (this will only work on machines with a webcam)
     cap = cv2.VideoCapture(0)
 
     # Variables to store the previous position of the face
@@ -64,7 +72,7 @@ async def start_face_tracking(background_tasks: BackgroundTasks):
         # Loop through all detected faces (in case there are multiple faces)
         for face in faces:
             # Get the coordinates of the face bounding box
-            x1, y1, x2, y2 = (face.left(), face.top(), face.right(), face.bottom())
+            x1, y1, x2, y2 = face.left(), face.top(), face.right(), face.bottom()
 
             # Draw a rectangle around the face
             cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
@@ -99,15 +107,20 @@ async def start_face_tracking(background_tasks: BackgroundTasks):
             # Update previous position of the face
             previous_x = face_center_x
 
-        # Display the frame
+        # Display the frame with the face detection rectangle
         cv2.imshow("Face Movement Tracker", frame)
 
-        # Break on 'q' key press
+        # Exit loop when 'q' key is pressed
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
-    # Release webcam and close windows
+    # Release webcam and close OpenCV windows
     cap.release()
     cv2.destroyAllWindows()
+
 if __name__ == "__main__":
+    import uvicorn
+    import os
+
+    # Run the FastAPI app
     uvicorn.run("app.main:app", host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
