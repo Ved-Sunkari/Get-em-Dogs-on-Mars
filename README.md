@@ -95,23 +95,33 @@ Open the browser and go to http://127.0.0.1:5000 to view the local instance of t
 We leveraged NVIDIA Isaac Sim as our primary simulation environment. This powerful tool allowed us to create highly realistic celestial environments, accurately modeling the unique gravitational fields, terrain types, and atmospheric conditions of various planets and moons.
 
 ## Three.js
-For rendering our 3D models and creating interactive web-based visualizations, we utilized Three.js. This JavaScript library enabled us to display the robotic dog and celestial environments in web browsers, providing an accessible and immersive user experience6.
-Machine Learning and AI
-PyTorch
-PyTorch served as our core framework for developing and training the reinforcement learning models. Its dynamic computational graph and extensive ecosystem of tools made it ideal for implementing complex AI algorithms for our robotic dog's adaptive behaviors2.
-Reinforcement Learning Algorithms
-We implemented various reinforcement learning algorithms to train our robotic dog to navigate and adapt to different celestial environments. These algorithms enabled the robot to learn optimal movement strategies for each unique planetary condition5.
-3D Modeling and Design
-Fusion 360
-Autodesk Fusion 360 was used for designing and modeling our robotic dog. This powerful CAD software allowed us to create detailed 3D models of the robot, ensuring accurate physical simulations in the virtual environments6.
-Backend and API
-FastAPI
-We chose FastAPI to build our backend API, enabling efficient communication between the frontend interface and our AI models. FastAPI's high performance and easy-to-use syntax made it an excellent choice for handling real-time data processing and model interactions1.
-Python
-Python served as our primary programming language, used extensively for backend development, data processing, and integrating various components of the project. Its versatility and rich library ecosystem made it ideal for this complex, multifaceted project13.
-Frontend Development
-HTML and JavaScript
-For creating the user interface and handling client-side interactions, we used HTML and JavaScript. These web technologies allowed us to build an intuitive and responsive frontend for users to interact with our robotic dog simulation6.
+For rendering our 3D models and creating interactive web-based visualizations, we utilized Three.js. This JavaScript library enabled us to display the robotic dog and celestial environments in web browsers, providing an accessible and immersive user experience.
+
+### Machine Learning and AI
+
+## PyTorch
+PyTorch served as our core framework for developing and training the reinforcement learning models. Its dynamic computational graph and extensive ecosystem of tools made it ideal for implementing complex AI algorithms for our robotic dog's adaptive behaviors.
+
+## Reinforcement Learning Algorithms
+We implemented various reinforcement learning algorithms to train our robotic dog to navigate and adapt to different celestial environments. These algorithms enabled the robot to learn optimal movement strategies for each unique planetary condition.
+
+### 3D Modeling and Design
+
+## Fusion 360
+Autodesk Fusion 360 was used for designing and modeling our robotic dog. This powerful CAD software allowed us to create detailed 3D models of the robot, ensuring accurate physical simulations in the virtual environments.
+
+### Backend and API
+
+## FastAPI
+We chose FastAPI to build our backend API, enabling efficient communication between the frontend interface and our AI models. FastAPI's high performance and easy-to-use syntax made it an excellent choice for handling real-time data processing and model interactions.
+
+## Python
+Python served as our primary programming language, used extensively for backend development, data processing, and integrating various components of the project. Its versatility and rich library ecosystem made it ideal for this complex, multifaceted project.
+
+### Frontend Development
+
+## HTML and JavaScript
+For creating the user interface and handling client-side interactions, we used HTML and JavaScript. These web technologies allowed us to build an intuitive and responsive frontend for users to interact with our robotic dog simulation.
 
 ### Future Implications
 This project has significant implications for:
