@@ -109,3 +109,5 @@ async def start_face_tracking(background_tasks: BackgroundTasks):
     # Release webcam and close windows
     cap.release()
     cv2.destroyAllWindows()
+if __name__ == "__main__":
+    uvicorn.run("app.main:app", host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
