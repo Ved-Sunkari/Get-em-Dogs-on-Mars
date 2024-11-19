@@ -1,4 +1,4 @@
-### 🤖🐶 Robotic Dog Simulation in Celestial Environments
+### 🤖🐶 Robotic Dog Simulation in Celestial Environments (Get em Dogs on Mars)
 
 Welcome to the Robotic Dog Simulation project, where we simulate a robotic dog learning to walk in various celestial environments! This project aims to explore the adaptability and learning capabilities of a quadrupedal robot in different gravitational fields, terrain types, and atmospheric conditions found on planets and moons in our solar system.
 
