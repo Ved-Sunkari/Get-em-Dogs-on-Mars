@@ -5,11 +5,12 @@ Welcome to the Robotic Dog Simulation project, where we simulate a robotic dog l
 ### High Level Summary:
 Our project explores the development of a robotic dog simulation system that adapts and learns to navigate different celestial environments, such as the varying gravitational fields, terrains, and atmospheric conditions found on planets and moons. Using reinforcement learning and advanced AI algorithms, we simulate the robot's ability to walk and interact with its surroundings. The system is integrated with a web-based interface where users can visualize the model’s behavior in real-time across different planetary environments. If the live application is unavailable, users can run local simulations via Python scripts. The project aims to enhance our understanding of robotic adaptability in extraterrestrial environments, providing valuable insights for future space exploration missions. Explore the project here: <>
 
+Check out our report - https://docs.google.com/document/d/1-dW4CtoSSfLx5eRArYeA_jrSn82YuHEId1o3SXoMngs/edit?usp=sharing
 
 ### View our models on the test data in the outputs folder!
 
 ### 🔗 Live Website
-The FastAPI app is available here: <>
+The FastAPI app is available here: www.cosmosunion.org/get-em-dogs-on-mars
 
 Note: The website may not always be up and running. In that case, use the app.py script for local testing.
 
