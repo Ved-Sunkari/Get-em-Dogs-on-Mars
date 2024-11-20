@@ -2,6 +2,10 @@
 
 Welcome to the Robotic Dog Simulation project, where we simulate a robotic dog learning to walk in various celestial environments! This project aims to explore the adaptability and learning capabilities of a quadrupedal robot in different gravitational fields, terrain types, and atmospheric conditions found on planets and moons in our solar system.
 
+### High Level Summary:
+Our project explores the development of a robotic dog simulation system that adapts and learns to navigate different celestial environments, such as the varying gravitational fields, terrains, and atmospheric conditions found on planets and moons. Using reinforcement learning and advanced AI algorithms, we simulate the robot's ability to walk and interact with its surroundings. The system is integrated with a web-based interface where users can visualize the model’s behavior in real-time across different planetary environments. If the live application is unavailable, users can run local simulations via Python scripts. The project aims to enhance our understanding of robotic adaptability in extraterrestrial environments, providing valuable insights for future space exploration missions. Explore the project here: <>
+
+
 ### View our models on the test data in the outputs folder!
 
 ### 🔗 Live Website
